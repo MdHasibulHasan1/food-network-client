@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ChefData = ({ chef }) => {
-  const [disable, setDisable] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
   const handleDisable = () => {
-    setDisable(true);
+    setIsButtonDisabled(true);
   };
   console.log(chef);
   const { years_of_experience, chef_name, _id, picture_url, recipes } = chef;
@@ -24,6 +25,7 @@ const ChefData = ({ chef }) => {
             <button
               onClick={handleDisable}
               className="btn btn-block my-2 btn-outline"
+              disabled={isButtonDisabled}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
