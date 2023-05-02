@@ -90,7 +90,7 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md w-96">
-        <h2 className="text-2xl font-medium mb-4">Register</h2>
+        <h2 className="text-2xl font-medium mb-4">Sign up to Food Network</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
@@ -198,6 +198,7 @@ const Register = () => {
             Register
           </button>
         </form>
+        <div></div>
       </div>
     </div>
   );
