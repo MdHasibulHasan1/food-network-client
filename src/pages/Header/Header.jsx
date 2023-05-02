@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import "./Header.css";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
-  const handleLogout = () => {
-    logOut()
-      .then((result) => {})
-      .catch((error) => console.error(error));
-  };
+  // const handleLogout = () => {
+  //   logOut()
+  //     .then((result) => {})
+  //     .catch((error) => console.error(error));
+  // };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -35,45 +35,66 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Food Network</a>
+              <a className="text-3xl">Food Network</a>
             </li>
             <li tabIndex={0}>
-              <a className="justify-between">Home</a>
+              <NavLink
+                to="/"
+                aria-label="Home"
+                title="Home"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <a>Blog</a>
+              <NavLink
+                to="/blog"
+                aria-label="blog"
+                title="blog"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Blog
+              </NavLink>
             </li>
             <li>
               <a>Picture</a>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Food Network</a>
+        <a className="btn btn-ghost normal-case text-3xl">Food Network</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li tabIndex={0}>
-            <a>Home</a>
+            <NavLink
+              to="/"
+              aria-label="Home"
+              title="Home"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <a>Blog</a>
-          </li>
-          <li className="">
-            {user && (
-              <img
-                className="w-full rounded block w-16 h-16"
-                src={user.photoURL}
-                alt="not found"
-              />
-            )}
+            <NavLink
+              to="/blog"
+              aria-label="blog"
+              title="Blog"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              Blog
+            </NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
         {user ? (
-          <Link onClick={handleLogout} className="btn">
-            Logout
-          </Link>
+          <img
+            className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-16"
+            src={user?.photoURL}
+            alt="not found"
+          />
         ) : (
           <Link to="/login" className="btn">
             Login
