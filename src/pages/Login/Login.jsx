@@ -1,46 +1,33 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import LoginWith from "../LoginWith/LoginWith";
 
-const Register = () => {
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, updateUserData } = useContext(AuthContext);
-  console.log(createUser);
+  const [error, setError] = useState("");
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+  const from = location.state?.from?.pathname || "/";
 
-  const handleSubmit = (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
+
     const form = event.target;
-    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photoUrl.value;
-    console.log(name, email, password, photo);
+    console.log(email, password);
 
-    // validation
-    setError("");
-    setSuccess("");
-    if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-      setError("Please add at least two uppercase.");
-      return;
-    } else if (!/(?=.*[!@#$&*])/.test(password)) {
-      setError("Please add a special character.");
-      return;
-    } else if (password.length < 6) {
-      setError("Password must be 6 characters long");
-      return;
-    }
-
-    createUser(email, password)
+    signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        updateUserData(result.user, name, photo);
+        form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -52,22 +39,7 @@ const Register = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-2xl font-medium mb-4">Sign up to Food Network</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-gray-700 font-medium mb-2"
-            >
-              Name:
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200"
-            />
-          </div>
+        <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -141,41 +113,26 @@ const Register = () => {
               </button>
             </div>
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="photo-url"
-              className="block text-gray-700 font-medium mb-2"
-            >
-              Photo URL:
-            </label>
-            <input
-              type="url"
-              id="photo-url"
-              name="photoUrl"
-              required
-              className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200"
-            />
-          </div>
+
           <button
             type="submit"
             className="bg-blue-500 block w-full text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
           >
-            Register
+            Login
           </button>
         </form>
         <div>{error}</div>
         <p>
           <small>
-            Already have an account?
-            <Link className="hover:text-blue-500" to="/login">
-              Login
+            New to Food Network?
+            <Link className="hover:text-blue-500 underline" to="/register">
+              Create an account
             </Link>
           </small>
         </p>
-        <LoginWith></LoginWith>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default Login;
