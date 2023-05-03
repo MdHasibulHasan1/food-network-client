@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import RecipeCard from "../RecipeCardGroup/RecipeCard/RecipeCard";
+import RecipeCardGroup from "../RecipeCardGroup/RecipeCardGroup";
 
 const RecipeDetail = () => {
   const { Id } = useParams();
@@ -10,7 +12,7 @@ const RecipeDetail = () => {
     const found = recipeDetail.chefs.find((rD) => rD._id == Id);
     setChefData(found);
   }, [Id]);
-  console.log(chefData);
+
   const {
     chef_name,
     likes,
@@ -18,8 +20,9 @@ const RecipeDetail = () => {
     picture_url,
     recipes,
     years_of_experience,
+    number_of_recipes,
   } = chefData;
-  console.log(recipes);
+
   return (
     <div>
       <div className=" bg-gray-50 p-4">
@@ -47,13 +50,23 @@ const RecipeDetail = () => {
             <p className="text-gray-700 font-semibold text-lg mb-2">
               Number of Recipes
             </p>
-            <p className="text-gray-700 text-2xl font-bold">10</p>
+            <p className="text-gray-700 text-2xl font-bold">
+              {recipes?.length}
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center">
             <p className="text-gray-700 font-semibold text-lg mb-2">Likes</p>
             <p className="text-gray-700 text-2xl font-bold">{likes}</p>
           </div>
         </div>
+      </div>
+
+      <div>
+        {recipes?.map((recipe) => {
+          <RecipeCardGroup singleRecipe={recipe}></RecipeCardGroup>;
+          console.log(recipe);
+          <RecipeCard></RecipeCard>;
+        })}
       </div>
     </div>
   );

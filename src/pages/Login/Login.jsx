@@ -9,7 +9,7 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md w-96">
-        <h2 className="text-2xl font-medium mb-4">Sign up to Food Network</h2>
+        <h2 className="text-2xl font-medium mb-4">Login to Food Network</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label
@@ -122,7 +122,7 @@ const Login = () => {
             Login
           </button>
         </form>
-        <div>{error}</div>
+        <div className="text-red-600">{error}</div>
         <p>
           New to Food Network?
           <Link className="hover:text-blue-500 underline ml-3" to="/register">

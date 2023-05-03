@@ -12,7 +12,7 @@ const ChefData = ({ chef }) => {
 
   const { years_of_experience, chef_name, likes, _id, picture_url, recipes } =
     chef;
-  console.log(years_of_experience);
+
   return (
     <div className="flex gap-3 lg:card-side bg-base-100 shadow-2xl p-4">
       <figure className="w-4/12 ">
@@ -33,7 +33,7 @@ const ChefData = ({ chef }) => {
             <p className="text-gray-700 font-semibold text-lg mb-2">
               Number of <br /> Recipes
             </p>
-            <p className="text-gray-700 text-2xl font-bold">10</p>
+            <p className="text-gray-700 text-2xl font-bold">{recipes.length}</p>
           </div>
           <div className="flex flex-col items-center justify-center">
             <p className="text-gray-700 font-semibold text-lg mb-2">

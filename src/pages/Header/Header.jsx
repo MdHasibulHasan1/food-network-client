@@ -2,14 +2,15 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import "./Header.css";
+
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
-  // const handleLogout = () => {
-  //   logOut()
-  //     .then((result) => {})
-  //     .catch((error) => console.error(error));
-  // };
+
+  const handleLogout = () => {
+    logOut()
+      .then((result) => {})
+      .catch((error) => console.error(error));
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -62,10 +63,34 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <a>Picture</a>
+              {user ? (
+                <NavLink
+                  onClick={handleLogout}
+                  to="/"
+                  aria-label="blog"
+                  title="Logoout"
+                  className={({ isActive }) =>
+                    isActive ? "text-black" : "default"
+                  }
+                >
+                  Logout
+                </NavLink>
+              ) : (
+                <NavLink
+                  to="/login"
+                  aria-label="login"
+                  title="Login"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-700" : "default"
+                  }
+                >
+                  Login
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>
+
         <a className="btn btn-ghost normal-case text-3xl">Food Network</a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -94,19 +119,42 @@ const Header = () => {
               Blog
             </NavLink>
           </li>
+          <li>
+            {user ? (
+              <NavLink
+                onClick={handleLogout}
+                to="/"
+                aria-label="logout"
+                title="Logout"
+                className={({ isActive }) =>
+                  isActive ? "text-black" : "default"
+                }
+              >
+                Logout
+              </NavLink>
+            ) : (
+              <NavLink
+                to="/login"
+                aria-label="login"
+                title="Login"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-700" : "default"
+                }
+              >
+                Login
+              </NavLink>
+            )}
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
-        {user ? (
+        {user && (
           <img
-            className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-16"
+            title={user?.displayName}
+            className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-8"
             src={user?.photoURL}
             alt="not found"
           />
-        ) : (
-          <Link to="/login" className="btn">
-            Login
-          </Link>
         )}
       </div>
     </div>

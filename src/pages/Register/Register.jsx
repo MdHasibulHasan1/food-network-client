@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import LoginWithGitHubAndGoogle from "../LoginWithGitHubAndGoogle/LoginWithGitHubAndGoogle";
 
@@ -7,8 +7,9 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, updateUserData } = useContext(AuthContext);
+  const { createUser, updateUserData, logOut } = useContext(AuthContext);
   console.log(createUser);
+  const navigate = useNavigate();
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -41,6 +42,11 @@ const Register = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         updateUserData(result.user, name, photo);
+        logOut()
+          .then((result) => {})
+          .catch((error) => console.error(error));
+        setSuccess("Account created successfully");
+        navigate("../login");
       })
       .catch((error) => {
         console.log(error);
@@ -163,7 +169,10 @@ const Register = () => {
             Register
           </button>
         </form>
-        <div className="text-red-600">{error}</div>
+        <div className="text-red-600">
+          {error}
+          {success}
+        </div>
         <p>
           Already have an account?
           <Link className="hover:text-blue-500 underline" to="/login">

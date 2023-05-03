@@ -6,10 +6,13 @@ const Footer = () => {
       <footer className="bg-gray-100 py-8 px-8">
         <div className="container mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="flex flex-col space-y-4">
-            {/* <img src="logo.png" alt="Logo" className="h-8 w-8" /> */}
-            <h2 className="text-3xl">Food Network</h2>
-            <span className="text-gray-600 font-semibold text-lg">
-              Recipe Website
+            {/* <img
+              src="https://play-lh.googleusercontent.com/zlJjOBpGW9rXyzCHUcUp0fL64kspqryeBbGjr3EUV0PVxd0kkIJHawoBAsV629OSpsc"
+              alt="Logo"
+              className="object-cover w-16"
+            /> */}
+            <span className="text-gray-600 font-semibold text-3xl">
+              Food Network
             </span>
           </div>
           <div>

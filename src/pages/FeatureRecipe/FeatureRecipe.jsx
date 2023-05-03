@@ -11,8 +11,9 @@ const FeatureRecipe = ({ food }) => {
     time,
     services,
   } = food;
+
   return (
-    <div className="mt-10">
+    <div className="mb-10 hover:scale-y-95 hover:transform translate-y-20 hover:transition-all duration-300">
       <div className="  ">
         <div className="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
           <img
