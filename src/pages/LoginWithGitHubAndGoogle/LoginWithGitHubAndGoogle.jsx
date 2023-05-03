@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
-const LoginWith = () => {
+const LoginWithGitHubAndGoogle = () => {
   const { signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -27,13 +27,13 @@ const LoginWith = () => {
     <div>
       <button
         onClick={handleGoogleSignIn}
-        className="btn my-3 btn-outline hover:btn-primary"
+        className="btn my-3 btn-outline hover:btn-primary w-full"
       >
         <FaGoogle /> <span className="ml-3">Login with Google</span>
       </button>
       <button
         onClick={handleGitHubSignIn}
-        className="btn  btn-outline hover:btn-primary"
+        className="btn  btn-outline hover:btn-primary w-full"
       >
         <FaGithub /> <span className="ml-3">Login with GitHub</span>
       </button>
@@ -41,4 +41,4 @@ const LoginWith = () => {
   );
 };
 
-export default LoginWith;
+export default LoginWithGitHubAndGoogle;

@@ -42,7 +42,9 @@ const Header = () => {
                 to="/"
                 aria-label="Home"
                 title="Home"
-                className={({ isActive }) => (isActive ? "active" : "default")}
+                className={({ isActive }) =>
+                  isActive ? "text-blue-700" : "default"
+                }
               >
                 Home
               </NavLink>
@@ -52,7 +54,9 @@ const Header = () => {
                 to="/blog"
                 aria-label="blog"
                 title="blog"
-                className={({ isActive }) => (isActive ? "active" : "default")}
+                className={({ isActive }) =>
+                  isActive ? "text-blue-700" : "default"
+                }
               >
                 Blog
               </NavLink>
@@ -71,7 +75,9 @@ const Header = () => {
               to="/"
               aria-label="Home"
               title="Home"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={({ isActive }) =>
+                isActive ? "text-blue-700" : "default"
+              }
             >
               Home
             </NavLink>
@@ -81,7 +87,9 @@ const Header = () => {
               to="/blog"
               aria-label="blog"
               title="Blog"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={({ isActive }) =>
+                isActive ? "text-blue-700" : "default"
+              }
             >
               Blog
             </NavLink>

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import LoginWithGitHubAndGoogle from "../LoginWithGitHubAndGoogle/LoginWithGitHubAndGoogle";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -123,13 +124,12 @@ const Login = () => {
         </form>
         <div>{error}</div>
         <p>
-          <small>
-            New to Food Network?
-            <Link className="hover:text-blue-500 underline" to="/register">
-              Create an account
-            </Link>
-          </small>
+          New to Food Network?
+          <Link className="hover:text-blue-500 underline ml-3" to="/register">
+            Create an account
+          </Link>
         </p>
+        <LoginWithGitHubAndGoogle></LoginWithGitHubAndGoogle>
       </div>
     </div>
   );

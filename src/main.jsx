@@ -5,10 +5,12 @@ import router from "./pages/routes/Routes";
 // import AuthProvider from "./provider/AuthProvider.jsx";
 import "tailwindcss/tailwind.css";
 import AuthProvider from "./providers/AuthProvider";
+import { Toaster } from "react-hot-toast";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    <Toaster></Toaster>
   </React.StrictMode>
 );

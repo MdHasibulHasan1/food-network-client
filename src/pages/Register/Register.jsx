@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import LoginWith from "../LoginWith/LoginWith";
+import LoginWithGitHubAndGoogle from "../LoginWithGitHubAndGoogle/LoginWithGitHubAndGoogle";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -163,16 +163,14 @@ const Register = () => {
             Register
           </button>
         </form>
-        <div>{error}</div>
+        <div className="text-red-600">{error}</div>
         <p>
-          <small>
-            Already have an account?
-            <Link className="hover:text-blue-500" to="/login">
-              Login
-            </Link>
-          </small>
+          Already have an account?
+          <Link className="hover:text-blue-500 underline" to="/login">
+            Login
+          </Link>
         </p>
-        <LoginWith></LoginWith>
+        <LoginWithGitHubAndGoogle></LoginWithGitHubAndGoogle>
       </div>
     </div>
   );
