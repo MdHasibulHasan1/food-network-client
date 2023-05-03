@@ -1,13 +1,21 @@
-## CareerBoost Repository
+## Food Network Repository
 
-CareerBoost is a professional networking site that allows you to search for jobs and apply directly through the platform based on your skills and interests.
+This is a web application that allows users to browse and search for recipes
 
 ## Here are some of its best features:
 
-- You can find Jobs based on your skills and interests.
-- You can apply for multiple jobs if you are interested.
-- you can also see your all Applied Jobs
-- You can see full details of any Job.
+- View recipes details.
+- You can read some blogs.
+- User authentication.
+- Responsive design for mobile and desktop.
+
+## Technologies Used
+
+- React.js
+- Express.js
+- Firebase Authentication
+- Tailwind
+- Vite
 
 ## Live Link
 

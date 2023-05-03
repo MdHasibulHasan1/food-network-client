@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -14,7 +13,6 @@ import {
 import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
-
 const auth = getAuth(app);
 const googleAuthProvider = new GoogleAuthProvider();
 const gitHubAuthProvider = new GithubAuthProvider();
@@ -55,14 +53,13 @@ const AuthProvider = ({ children }) => {
   const signInWithGitHub = () => {
     return signInWithPopup(auth, gitHubAuthProvider);
   };
-  // observer user auth state
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
 
-    // stop observing while unmounting
     return () => {
       return unsubscribe();
     };

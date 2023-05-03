@@ -12,7 +12,7 @@ const Footer = () => {
               className="object-cover w-16"
             /> */}
             <span className="text-gray-600 font-semibold text-3xl">
-              Food Network
+              Food <span className="text-yellow-500"> Network</span>
             </span>
           </div>
           <div>

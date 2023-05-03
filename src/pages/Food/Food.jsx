@@ -3,33 +3,33 @@ import React from "react";
 const Food = () => {
   return (
     <div>
-      <section className="bg-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row">
-          <div
-            className="md:w-1/2 h-full bg-cover bg-center rounded-lg  shadow-md"
-            style={{
-              backgroundImage:
-                "url(https://i.ibb.co/rb0kP09/spicy-tomato-soup-3684-jpg.webp)",
-            }}
-          ></div>
-          <div className="md:w-1/2 py-6 md:py-12 px-4">
+      <section className="bg-gray-100 py-12 ">
+        <div className=" mx-auto px-4 sm:px-6 items-center justify-center lg:px-8 flex flex-col md:flex-row">
+          <div class="md:w-6/12 w-full h-[65vh] p-4 rounded-lg">
+            <img
+              class="w-full h-full block object-cover"
+              src="https://i.ibb.co/SxtT6gP/kung-pao-chicken-6.jpg"
+              alt="not found"
+            />
+          </div>
+
+          <div className="md:w-1/2 px-4">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Section Title
+              Kung Pao Chicken
             </h2>
             <p className="text-gray-600 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              hendrerit a nulla eget laoreet. Nulla ullamcorper facilisis diam,
-              id pellentesque neque convallis vitae. Pellentesque sollicitudin
-              tincidunt massa, sed convallis eros ultricies a. Nulla vestibulum
-              tincidunt magna, a dapibus justo maximus vel.
+              Kung Pao Chicken is a popular Chinese dish that originated in the
+              Sichuan province of China. It is a spicy stir-fry dish made with
+              marinated chicken, peanuts, vegetables, and chili peppers. The
+              dish is named after Ding Baozhen, a Qing Dynasty official, who was
+              known as Kung Pao in his later years.
             </p>
             <p className="text-gray-600 mb-4">
-              In hac habitasse platea dictumst. Sed rhoncus odio sit amet sapien
-              rutrum, eu efficitur augue feugiat. Ut tristique ante ut ante
-              scelerisque auctor. Fusce ullamcorper euismod leo, in maximus eros
-              facilisis ut. Sed vel lectus eu quam bibendum placerat a a odio.
-              Aliquam blandit nibh eu magna venenatis, vel ultricies magna
-              rhoncus.
+              Kung Pao Chicken is named after Ding Baozhen, a Qing Dynasty
+              official who was known as Kung Pao in his later years. According
+              to legend, Kung Pao was a lover of spicy food and created the dish
+              himself, using Sichuan peppercorns and chili peppers to give it a
+              fiery kick.
             </p>
             <a
               href="#"

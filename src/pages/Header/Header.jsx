@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import "./Header.css";
 
+import { Tooltip } from "react-tooltip";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -12,7 +13,7 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100  z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,9 +36,6 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a className="text-3xl">Food Network</a>
-            </li>
             <li tabIndex={0}>
               <NavLink
                 to="/"
@@ -52,9 +50,9 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/blog"
-                aria-label="blog"
-                title="blog"
+                to="/blogs"
+                aria-label="blogs"
+                title="Blogs"
                 className={({ isActive }) =>
                   isActive ? "text-blue-700" : "default"
                 }
@@ -91,7 +89,9 @@ const Header = () => {
           </ul>
         </div>
 
-        <a className="btn btn-ghost normal-case text-3xl">Food Network</a>
+        <span className="text-gray-600 font-semibold text-3xl">
+          Food <span className="text-yellow-500"> Network</span>
+        </span>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -109,14 +109,14 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/blog"
-              aria-label="blog"
-              title="Blog"
+              to="/blogs"
+              aria-label="blogs"
+              title="Blogs"
               className={({ isActive }) =>
                 isActive ? "text-blue-700" : "default"
               }
             >
-              Blog
+              Blogs
             </NavLink>
           </li>
           <li>
@@ -147,6 +147,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
+
       <div className="navbar-end">
         {user && (
           <img
@@ -156,6 +157,10 @@ const Header = () => {
             alt="not found"
           />
         )}
+      </div>
+      <div>
+        <button data-tip="This is a tooltip">Hover me</button>
+        <Tooltip />
       </div>
     </div>
   );
