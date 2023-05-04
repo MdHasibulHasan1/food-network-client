@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import "./Header.css";
 
-import { Tooltip } from "react-tooltip";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -13,7 +12,7 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navbar bg-base-100  z-50">
+    <div className="navbar bg-slate-100   z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -150,17 +149,14 @@ const Header = () => {
 
       <div className="navbar-end">
         {user && (
-          <img
-            title={user?.displayName}
-            className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-8"
-            src={user?.photoURL}
-            alt="not found"
-          />
+          <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+            <img
+              className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-8"
+              src={user?.photoURL}
+              alt="not found"
+            />
+          </div>
         )}
-      </div>
-      <div>
-        <button data-tip="This is a tooltip">Hover me</button>
-        <Tooltip />
       </div>
     </div>
   );

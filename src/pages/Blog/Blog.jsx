@@ -1,16 +1,16 @@
 import React from "react";
-import Pdf from "react-to-pdf";
-const options = {
-  orientation: "landscape",
-  unit: "in",
-  format: [11, 8.5],
-};
+// import Pdf from "react-to-pdf";
+// const options = {
+//   orientation: "landscape",
+//   unit: "in",
+//   format: [11, 8.5],
+// };
 function Blog() {
-  const ref = React.createRef();
+  // const ref = React.createRef();
 
   return (
-    <div className="">
-      <Pdf targetRef={ref} filename="blog.pdf" options={options}>
+    <div className="pt-20">
+      {/* <Pdf targetRef={ref} filename="blog.pdf" options={options}>
         {({ toPdf }) => (
           <button
             className="btn bg-slate-200 text-black mb-3 hover:text-white block mx-auto"
@@ -19,7 +19,7 @@ function Blog() {
             Generate Pdf
           </button>
         )}
-      </Pdf>
+      </Pdf> */}
 
       <div ref={ref} className="bg-gray-100 min-h-screen">
         <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">

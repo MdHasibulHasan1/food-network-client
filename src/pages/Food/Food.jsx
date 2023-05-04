@@ -5,9 +5,9 @@ const Food = () => {
     <div>
       <section className="bg-gray-100 py-12 ">
         <div className=" mx-auto px-4 sm:px-6 items-center justify-center lg:px-8 flex flex-col md:flex-row">
-          <div class="md:w-6/12 w-full h-[65vh] p-4 rounded-lg">
+          <div className="md:w-6/12 w-full h-[65vh] p-4 rounded-lg">
             <img
-              class="w-full h-full block object-cover"
+              className="w-full h-full block object-cover"
               src="https://i.ibb.co/SxtT6gP/kung-pao-chicken-6.jpg"
               alt="not found"
             />

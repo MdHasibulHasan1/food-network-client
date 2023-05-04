@@ -8,12 +8,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <Header></Header>
-      <Outlet></Outlet>
-    </>
-  );
+  return <></>;
 }
 
 export default App;
