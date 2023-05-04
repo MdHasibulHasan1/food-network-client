@@ -1,37 +1,51 @@
 import React, { useState } from "react";
 
 import toast from "react-hot-toast";
-import SingleRecipe from "../../SingleRecipe/SingleRecipe";
+import { addToDb } from "../../utilities/fakedb";
+import SingleRecipe from "../SingleRecipe/SingleRecipe";
+import { Rating } from "@smastrom/react-rating";
 
-const RecipeCard = ({ recipes }) => {
-  console.log(recipes);
+import "@smastrom/react-rating/style.css";
+const RecipeCard = ({ recipes, id }) => {
+  console.log(recipes, id);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-
-  const handleDisable = (e) => {
-    setIsButtonDisabled(true);
-
-    toast.success("Add  to favorites!");
+  const handleDisable = (index) => {
+    setIsButtonDisabled((prevState) => ({ ...prevState, [index]: true }));
+    toast.success("Added to favorites!");
+    addToDb(id);
   };
+
   return (
-    <div className="grid gap-4  lg:grid-cols-3">
+    <div className="grid mx-4 gap-4 md:grid-cols-2  lg:grid-cols-3">
       {recipes?.map((recipe, index) => {
         return (
-          <div className="flex flex-col justify-between p-4 shadow-md rounded-md">
+          <div
+            key={index}
+            className="flex flex-col justify-between p-4 shadow-md rounded-md"
+          >
             <div key={index} className="">
               <h1 className="font-bold text-2xl">{recipe?.name}</h1>
               <SingleRecipe recipe={recipe}></SingleRecipe>
               <div>
-                <h1 className="font-medium p-2 text-lg my-2 border border-gray-400">
+                <h1 className="font-medium p-2 outline-3 hover:bg-gray-100 text-left text-lg my-2 border">
                   Cooking method:
                 </h1>
                 <p>{recipe.cooking_method}</p>
-                <h1>{recipe.rating}</h1>
+                <div className="flex gap-3 items-center">
+                  <Rating
+                    style={{ maxWidth: 150 }}
+                    value={Math.round(recipe?.rating)}
+                    readOnly
+                  />
+                  <h1>{recipe.rating}</h1>
+                </div>
               </div>
             </div>
+
             <button
-              onClick={handleDisable}
+              onClick={() => handleDisable(index)}
               className="btn btn-block my-2 btn-outline"
-              disabled={isButtonDisabled}
+              disabled={isButtonDisabled[index]}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

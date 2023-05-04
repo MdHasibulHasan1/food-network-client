@@ -6,11 +6,6 @@ const Footer = () => {
       <footer className="bg-gray-100 py-8 px-8">
         <div className="container mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="flex flex-col space-y-4">
-            {/* <img
-              src="https://play-lh.googleusercontent.com/zlJjOBpGW9rXyzCHUcUp0fL64kspqryeBbGjr3EUV0PVxd0kkIJHawoBAsV629OSpsc"
-              alt="Logo"
-              className="object-cover w-16"
-            /> */}
             <span className="text-gray-600 font-semibold text-3xl">
               Food <span className="text-yellow-500"> Network</span>
             </span>

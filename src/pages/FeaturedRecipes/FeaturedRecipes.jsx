@@ -7,7 +7,7 @@ const FeaturedRecipes = () => {
   const { setLoading, loading } = useContext(AuthContext);
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/foods")
+    fetch("https://server-hasib7143-gmailcom.vercel.app/foods")
       .then((result) => result.json())
       .then((data) => setFoodsData(data));
     setLoading(false);

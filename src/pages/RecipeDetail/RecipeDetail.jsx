@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import RecipeCard from "../RecipeCardGroup/RecipeCard/RecipeCard";
+import RecipeCard from "../RecipeCard/RecipeCard";
 
 const RecipeDetail = () => {
   const { Id } = useParams();
@@ -60,7 +60,7 @@ const RecipeDetail = () => {
         </div>
       </div>
       <div>
-        <RecipeCard recipes={recipes && recipes}></RecipeCard>;
+        <RecipeCard id={Id} recipes={recipes && recipes}></RecipeCard>;
       </div>
     </div>
   );

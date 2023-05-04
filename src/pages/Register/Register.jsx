@@ -32,9 +32,6 @@ const Register = () => {
     } else if (!/(?=.*[!@#$&*])/.test(password)) {
       setError("Please add a special character.");
       return;
-    } else if (password.length < 6) {
-      setError("Password must be 6 characters long");
-      return;
     }
 
     createUser(email, password)

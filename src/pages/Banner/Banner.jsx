@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="pt-16">
       <div
         style={{
           backgroundImage: `url(
@@ -12,11 +12,11 @@ const Banner = () => {
         className="relative h-[60vh] bg-red-300 bg-cover bg-no-repeat bg-blend-overlay bg-opacity-50  bg-center bg-fixed flex flex-col items-center justify-center py-20"
       >
         <div className="flex flex-col absolute items-center justify-center py-20">
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="text-4xl px-4 font-bold text-white mb-4">
             Welcome to Food Network
           </h1>
 
-          <p className="text-xl font-semibold text-white">
+          <p className="text-xl px-4 font-semibold text-white">
             Discover new recipes, cook like a pro, and share your love of food
             with the world.
           </p>

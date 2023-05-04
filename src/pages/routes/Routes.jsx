@@ -37,7 +37,8 @@ const router = createBrowserRouter([
             <RecipeDetail></RecipeDetail>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch("http://localhost:5000/chefs"),
+        loader: ({ params }) =>
+          fetch("https://server-hasib7143-gmailcom.vercel.app/chefs"),
       },
     ],
   },
