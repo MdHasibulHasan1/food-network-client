@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="mx-auto flex justify-center w-8/12 mt-10">
+      <div className="mx-auto flex justify-center w-8/12">
         <ColorRing
           visible={true}
           height="80"
