@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleLogout = () => {
     logOut()
       .then((result) => {})
@@ -59,6 +60,20 @@ const Header = () => {
                 Blog
               </NavLink>
             </li>
+            {user && (
+              <li>
+                <NavLink
+                  to="/profile"
+                  aria-label="Update Profile"
+                  title="Update Profile"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-700" : "default"
+                  }
+                >
+                  Update Profile
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink
                 to="/about-us"
@@ -130,6 +145,20 @@ const Header = () => {
               Blogs
             </NavLink>
           </li>
+          {user && (
+            <li>
+              <NavLink
+                to="/profile"
+                aria-label="Update Profile"
+                title="Update Profile"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-700" : "default"
+                }
+              >
+                Update Profile
+              </NavLink>
+            </li>
+          )}
           <li>
             <NavLink
               to="/about-us"
@@ -173,7 +202,11 @@ const Header = () => {
 
       <div className="navbar-end">
         {user && (
-          <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+          <div
+            onClick={() => navigate("/profile")}
+            className="tooltip tooltip-left"
+            data-tip={user?.displayName}
+          >
             <img
               className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-8"
               src={user?.photoURL}

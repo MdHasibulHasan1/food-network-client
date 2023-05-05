@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
+
 const LoginWithGitHubAndGoogle = () => {
   const navigate = useNavigate();
   const { signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
@@ -10,6 +12,7 @@ const LoginWithGitHubAndGoogle = () => {
       .then((result) => {
         const loggedUser = result.user;
         navigate("/");
+        toast.success("Login successful!");
       })
       .catch((error) => {
         console.log(error);
@@ -21,6 +24,7 @@ const LoginWithGitHubAndGoogle = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         navigate("/");
+        toast.success("Login successful!");
       })
       .catch((error) => {
         console.log(error);

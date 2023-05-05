@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import LoginWithGitHubAndGoogle from "../LoginWithGitHubAndGoogle/LoginWithGitHubAndGoogle";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -29,6 +30,9 @@ const Register = () => {
     if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
       setError("Please add at least two uppercase.");
       return;
+    } else if (password.length < 6) {
+      setError("Your password must be at least 6 characters");
+      return;
     } else if (!/(?=.*[!@#$&*])/.test(password)) {
       setError("Please add a special character.");
       return;
@@ -43,6 +47,7 @@ const Register = () => {
           .then((result) => {})
           .catch((error) => console.error(error));
         setSuccess("Account created successfully");
+        toast.success("Account created successfully!");
         navigate("../login");
       })
       .catch((error) => {

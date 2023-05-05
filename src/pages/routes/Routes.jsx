@@ -7,6 +7,7 @@ import LoginLayouts from "../layouts/LoginLayouts";
 import Login from "../Login/Login";
 import RecipeDetail from "../RecipeDetail/RecipeDetail";
 import Register from "../Register/Register";
+import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutUsPage></AboutUsPage>,
+      },
+      {
+        path: "profile",
+        element: <UpdateProfile></UpdateProfile>,
       },
       {
         path: "recipe/:Id",

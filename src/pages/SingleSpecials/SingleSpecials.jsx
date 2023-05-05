@@ -17,8 +17,12 @@ const SingleSpecials = ({ special }) => {
       <div className="w-8/12 grow">
         <div className="flex items-center font-bold gap-2 justify-between">
           <h3>{item}</h3>
-          <div className="badge badge-warning gap-2">{type ? type : ""}</div>
-          <div className="border-2 w-1/12 border-dashed border-gray-400"></div>
+          <div
+            className={`badge badge-warning gap-2 ${type ? "block" : "hidden"}`}
+          >
+            {type ? type : ""}
+          </div>
+          <div className="border-2 grow border-dashed border-gray-400"></div>
           <span>{price}</span>
         </div>
         <h3>

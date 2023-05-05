@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -73,6 +74,7 @@ const AuthProvider = ({ children }) => {
     updateUserData,
     signIn,
     logOut,
+    auth,
     signInWithGoogle,
     signInWithGitHub,
   };

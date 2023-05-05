@@ -1,20 +1,41 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import LoginWithGitHubAndGoogle from "../LoginWithGitHubAndGoogle/LoginWithGitHubAndGoogle";
+import toast from "react-hot-toast";
+
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const { signIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const { signIn, auth, user } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const location = useLocation();
+  const emailRef = useRef();
 
   const from = location.state?.from?.pathname || "/";
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
+  // const email = emailRef?.current?.value;
+  console.log(email);
+  const handleResetPassword = () => {
+    console.log(email);
+    if (!email) {
+      return toast.success("Enter Your Email!");
+    }
+    sendPasswordResetEmail(auth, email)
+      .then((result) => {
+        return toast.success("Check Your Email!");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   const handleLogin = (event) => {
     event.preventDefault();
 
@@ -28,6 +49,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         form.reset();
+        toast.success("Login successful!");
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -49,10 +71,12 @@ const Login = () => {
               Email:
             </label>
             <input
+              onBlur={(e) => setEmail(e.target.value)}
               type="email"
               name="email"
               id="email"
               required
+              ref={emailRef}
               className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200"
             />
           </div>
@@ -73,7 +97,7 @@ const Login = () => {
               />
               <button
                 type="button"
-                onClick={handleShowPassword}
+                onClick={() => handleShowPassword()}
                 className="absolute top-0 right-0 mt-3 mr-3 text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500"
               >
                 {showPassword ? (
@@ -128,6 +152,17 @@ const Login = () => {
           <Link className="hover:text-blue-500 underline ml-3" to="/register">
             Create an account
           </Link>
+        </p>
+        <p>
+          <small>
+            Forget password! please{" "}
+            <button
+              className="btn btn-link"
+              onClick={() => handleResetPassword()}
+            >
+              Reset Password
+            </button>
+          </small>
         </p>
         <LoginWithGitHubAndGoogle></LoginWithGitHubAndGoogle>
       </div>

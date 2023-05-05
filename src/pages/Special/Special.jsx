@@ -27,7 +27,7 @@ const Special = () => {
         className={`btn ${
           specials?.length > 6 && "hidden"
         }  block outline-yellow-500 mx-auto mb-3 btn-outline btn-warning`}
-        onClick={() => setLen(7)}
+        onClick={() => setLen(9)}
       >
         View The Full Menus
       </button>
