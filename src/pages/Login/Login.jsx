@@ -59,7 +59,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen pt-16 bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-2xl font-medium mb-4">Login to Food Network</h2>
         <form onSubmit={handleLogin}>

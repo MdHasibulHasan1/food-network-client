@@ -9,19 +9,18 @@ const UpdateProfile = () => {
   const [email, setEmail] = useState(null);
   const [name, setName] = useState(null);
   const [photoURL, setPhotoURL] = useState(null);
-  console.log(user);
-  const updateUserData = () => {
-    updateProfile(user, {
+
+  const updateUserData = (e) => {
+    if (!email || !name || !photoURL) {
+      return toast.success("Write these input fields to update your profile");
+    }
+    updateProfile(auth.currentUser, {
       displayName: name,
       email: email,
       photoURL: photoURL,
     })
-      .then(() => {
-        toast.success("Update Successful!");
-      })
-      .catch((err) => {
-        toast.success("Something wrong");
-      });
+      .then(() => {})
+      .catch((err) => {});
   };
 
   return (

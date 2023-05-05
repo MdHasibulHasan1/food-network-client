@@ -7,7 +7,7 @@ import { ColorRing } from "react-loader-spinner";
 
 const LoginLayouts = () => {
   const navigation = useNavigation();
-  console.log(navigation);
+  // console.log(navigation);
   return (
     <div>
       <div>
