@@ -1,5 +1,6 @@
 import React from "react";
 import Pdf from "react-to-pdf";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 const options = {
   orientation: "landscape",
   unit: "in",
@@ -9,20 +10,24 @@ function Blog() {
   const ref = React.createRef();
 
   return (
-    <div className="pt-16">
-      <Pdf targetRef={ref} filename="blog.pdf" options={options}>
-        {({ toPdf }) => (
-          <button
-            className="btn mt-3 bg-slate-200 text-black mb-3 hover:text-white block mx-auto"
-            onClick={toPdf}
-          >
-            Generate Pdf
-          </button>
-        )}
-      </Pdf>
-
-      <div ref={ref} className="bg-gray-100 min-h-screen">
-        <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="font-serif pt-20">
+      <div className="flex justify-center">
+        <Pdf targetRef={ref} filename="blog.pdf" options={options}>
+          {({ toPdf }) => (
+            <button
+              className="btn mt-3 bg-gray-200 text-black mb-3 hover:text-white block mx-auto"
+              onClick={toPdf}
+            >
+              Generate Pdf
+            </button>
+          )}
+        </Pdf>
+      </div>
+      <div className="flex justify-center">
+        <ThemeToggle></ThemeToggle>
+      </div>
+      <div ref={ref} id="blog" className=" min-h-screen">
+        <main className="max-w-7xl  mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <article className="my-4">
               <h2 className="text-2xl font-bold mb-2">

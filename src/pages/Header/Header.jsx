@@ -60,6 +60,18 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
+              <NavLink
+                to="/about-us"
+                aria-label="about us"
+                title="About us"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-700" : "default"
+                }
+              >
+                About Us
+              </NavLink>
+            </li>
+            <li>
               {user ? (
                 <NavLink
                   onClick={handleLogout}
@@ -116,6 +128,18 @@ const Header = () => {
               }
             >
               Blogs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about-us"
+              aria-label="about us"
+              title="About us"
+              className={({ isActive }) =>
+                isActive ? "text-blue-700" : "default"
+              }
+            >
+              About Us
             </NavLink>
           </li>
           <li>

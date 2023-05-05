@@ -1,7 +1,8 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
- 
+  font-family: 'Instrument Serif', serif;
+
   text-align: center;
 }
 

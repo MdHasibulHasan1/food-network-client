@@ -3,7 +3,7 @@ import Banner from "../Banner/Banner";
 import ChefData from "../ChefData/ChefData";
 import Food from "../Food/Food";
 import FeaturedRecipes from "../FeaturedRecipes/FeaturedRecipes";
-import { AuthContext } from "../../providers/AuthProvider";
+import Special from "../Special/Special";
 
 const Home = () => {
   const [chefsData, setChefsData] = useState([]);
@@ -29,6 +29,7 @@ const Home = () => {
       </div>
       <Food></Food>
       <FeaturedRecipes></FeaturedRecipes>
+      <Special></Special>
     </div>
   );
 };

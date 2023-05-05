@@ -19,4 +19,4 @@ This is a web application that allows users to browse and search for recipes
 
 ## Live Link
 
-Hosted in Netlify -> [CareerBoost](https://earnest-puppy-b396cb.netlify.app/?fbclid=IwAR0IZkWtvGuDUYWdQZbXiP-4WiIr04oobk0P7BktLZ6xS89PS7o4eC5P6_I)
+Hosted in Netlify -> [CareerBoost](https://chef-recipe-hunter-main.web.app/)

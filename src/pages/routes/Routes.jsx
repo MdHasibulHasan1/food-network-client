@@ -1,4 +1,5 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
+import AboutUsPage from "../AboutUsPage/AboutUsPage";
 import Blog from "../Blog/Blog";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <Blog></Blog>,
+      },
+      {
+        path: "about-us",
+        element: <AboutUsPage></AboutUsPage>,
       },
       {
         path: "recipe/:Id",
