@@ -5,7 +5,7 @@ const SingleSpecials = ({ special }) => {
   const { item, type, toppings, price, img } = special;
   return (
     <div className="mt-3 md:gap-3 justify-start md:justify-between  flex">
-      <figure className="w-4/12 ">
+      <figure className="w-4/12 mr-2">
         <LazyLoadImage
           className="w-full mx-auto h-36"
           alt="not found"

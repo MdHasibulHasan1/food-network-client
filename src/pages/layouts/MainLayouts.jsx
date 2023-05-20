@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { ColorRing } from "react-loader-spinner";
 
-const LoginLayouts = () => {
+const MainLayouts = () => {
   const navigation = useNavigation();
   // console.log(navigation);
   return (
@@ -33,4 +33,4 @@ const LoginLayouts = () => {
   );
 };
 
-export default LoginLayouts;
+export default MainLayouts;

@@ -3,7 +3,8 @@ import AboutUsPage from "../AboutUsPage/AboutUsPage";
 import Blog from "../Blog/Blog";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
-import LoginLayouts from "../layouts/LoginLayouts";
+import MainLayouts from "../layouts/MainLayouts";
+
 import Login from "../Login/Login";
 import RecipeDetail from "../RecipeDetail/RecipeDetail";
 import Register from "../Register/Register";
@@ -13,7 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginLayouts></LoginLayouts>,
+    element: <MainLayouts></MainLayouts>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {

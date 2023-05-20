@@ -3,18 +3,21 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogout = () => {
     logOut()
-      .then((result) => {})
+      .then((result) => {
+        toast.success("Log Out successful!");
+      })
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navbar bg-slate-100 fixed  z-50">
-      <div className="navbar-start">
+    <div className="navbar bg-slate-100 fixed top-0 z-50">
+      <div className="navbar-start flex items-center">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -115,7 +118,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <span className="text-gray-600 font-semibold text-3xl">
+        <span className="text-gray-600 font-semibold sm:text-3xl ">
           Food <span className="text-yellow-500"> Network</span>
         </span>
       </div>
@@ -200,18 +203,20 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end flex justify-end">
         {user && (
-          <div
-            onClick={() => navigate("/profile")}
-            className="tooltip tooltip-left"
-            data-tip={user?.displayName}
-          >
-            <img
-              className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-8"
-              src={user?.photoURL}
-              alt="not found"
-            />
+          <div>
+            <div
+              onClick={() => navigate("/profile")}
+              className="tooltip tooltip-left"
+              data-tip={user?.displayName}
+            >
+              <img
+                className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-8"
+                src={user?.photoURL}
+                alt="not found"
+              />
+            </div>
           </div>
         )}
       </div>

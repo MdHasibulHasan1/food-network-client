@@ -8,8 +8,8 @@ const ChefData = ({ chef }) => {
     chef;
 
   return (
-    <div className="flex gap-3 lg:card-side bg-base-100 shadow-2xl p-4">
-      <figure className="w-4/12 ">
+    <div className="flex gap-3 items-center lg:card-side bg-base-100 shadow-2xl p-4">
+      <figure className="w-4/12 mr-1">
         <LazyLoadImage
           className="w-full mx-auto h-full"
           alt="not found"
