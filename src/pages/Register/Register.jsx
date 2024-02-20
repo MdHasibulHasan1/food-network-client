@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import LoginWithGitHubAndGoogle from "../LoginWithGitHubAndGoogle/LoginWithGitHubAndGoogle";
+import LoginWithGitHubAndGoogle from "../../components/LoginWithGitHubAndGoogle/LoginWithGitHubAndGoogle";
 import toast from "react-hot-toast";
 
 const Register = () => {

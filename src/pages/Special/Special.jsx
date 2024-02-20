@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SingleSpecials from "../SingleSpecials/SingleSpecials";
+import SingleSpecial from "./SingleSpecials/SingleSpecial";
 
 const Special = () => {
   const [specials, setSpecials] = useState(null);
@@ -20,16 +20,18 @@ const Special = () => {
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 p-4">
         {specials?.map((special, i) => {
-          return <SingleSpecials special={special} key={i}></SingleSpecials>;
+          return <SingleSpecial special={special} key={i} />;
         })}
       </div>
       <button
         className={`btn ${
           specials?.length > 6 && "hidden"
-        }  block outline-yellow-500 mx-auto mb-3 btn-outline btn-warning`}
+        }  block outline-yellow-500 group  mx-auto mb-3 btn-outline btn-warning`}
         onClick={() => setLen(9)}
       >
-        View The Full Menus
+        <span className="group-hover:text-white text-yellow-500">
+          View The Full Menus
+        </span>
       </button>
     </div>
   );

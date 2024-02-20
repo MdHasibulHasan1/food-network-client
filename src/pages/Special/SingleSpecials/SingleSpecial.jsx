@@ -1,7 +1,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-const SingleSpecials = ({ special }) => {
+const SingleSpecial = ({ special }) => {
   const { item, type, toppings, price, img } = special;
   return (
     <div className="mt-3 md:gap-3 justify-start md:justify-between  flex">
@@ -33,4 +33,4 @@ const SingleSpecials = ({ special }) => {
   );
 };
 
-export default SingleSpecials;
+export default SingleSpecial;

@@ -1,9 +1,10 @@
 import React, { useEffect, useContext, useState } from "react";
-import Banner from "../Banner/Banner";
-import ChefData from "../ChefData/ChefData";
+import Banner from "./Banner/Banner";
+import ChefData from "./ChefData/ChefData";
 import Food from "../Food/Food";
-import FeaturedRecipes from "../FeaturedRecipes/FeaturedRecipes";
 import Special from "../Special/Special";
+import SectionTitle from "../../components/sectionTitle";
+import FeaturedRecipes from "./FeaturedRecipes/FeaturedRecipes";
 
 const Home = () => {
   const [chefsData, setChefsData] = useState([]);
@@ -18,17 +19,16 @@ const Home = () => {
 
   return (
     <div>
-      <Banner></Banner>
-      <h2 className="text-3xl text-center my-4 leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-        Our Top <span className="text-yellow-500">Chefs</span>
-      </h2>
-      <div className="grid md:grid-cols-2 gap-5 ">
+      <Banner />
+
+      <SectionTitle title="Our Top" highlightedText="Chefs" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-2 justify-between mx-4">
         {chefsData.map((chef) => (
           <ChefData chef={chef} key={chef._id}></ChefData>
         ))}
       </div>
       <Food></Food>
-      <FeaturedRecipes></FeaturedRecipes>
+      <FeaturedRecipes />
       <Special></Special>
     </div>
   );

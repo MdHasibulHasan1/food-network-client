@@ -12,15 +12,16 @@ const Banner = () => {
         className="relative h-[60vh] bg-red-300 bg-cover bg-no-repeat bg-blend-overlay bg-opacity-50  bg-center bg-fixed flex flex-col items-center justify-center py-20"
       >
         <div className="flex flex-col absolute items-center justify-center py-20">
-          <h1 className="text-4xl px-4 font-bold text-white mb-4">
-            Welcome to Food Network
+          <h1 className="text-4xl px-4 mb-4 leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Welcome to <span className="text-gray-100">Food Network</span>
           </h1>
-
-          <p className="text-xl px-4 font-semibold text-white">
+          {/* <SectionTitle title="Welcome to" highlightedText="Food Network" /> */}
+          <p className="text-xl px-4 font-semibold  mt-1 leading-6 text-gray-100">
             Discover new recipes, cook like a pro, and share your love of food
             with the world.
           </p>
-          <button className="mt-8 bg-black hover:bg-slate-950 text-white py-2 px-4 rounded-full uppercase font-semibold">
+
+          <button className="mt-8 bg-slate-950 hover:bg-slate-900 text-white py-1 px-4 rounded-full uppercase font-semibold">
             Start cooking now
           </button>
         </div>

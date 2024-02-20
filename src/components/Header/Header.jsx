@@ -16,7 +16,7 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navbar bg-slate-100 fixed top-0 z-50">
+    <div className="navbar bg-slate-100 fixed top-0  font-medium text-gray-700 uppercase  z-50">
       <div className="navbar-start flex items-center">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,7 +45,7 @@ const Header = () => {
                 aria-label="Home"
                 title="Home"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-700" : "default"
+                  isActive ? "font-bold" : "default"
                 }
               >
                 Home
@@ -56,9 +56,7 @@ const Header = () => {
                 to="/blogs"
                 aria-label="blogs"
                 title="Blogs"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-700" : "default"
-                }
+                className={({ isActive }) => (isActive ? "font-bold" : "")}
               >
                 Blog
               </NavLink>
@@ -69,9 +67,7 @@ const Header = () => {
                   to="/profile"
                   aria-label="Update Profile"
                   title="Update Profile"
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-700" : "default"
-                  }
+                  className={({ isActive }) => (isActive ? "font-bold " : "")}
                 >
                   Update Profile
                 </NavLink>
@@ -82,23 +78,19 @@ const Header = () => {
                 to="/about-us"
                 aria-label="about us"
                 title="About us"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-700" : "default"
-                }
+                className={({ isActive }) => (isActive ? "font-bold" : "")}
               >
                 About Us
               </NavLink>
             </li>
-            <li>
+            <li className="ml-auto w-full">
               {user ? (
                 <NavLink
                   onClick={handleLogout}
                   to="/"
                   aria-label="blog"
                   title="Logoout"
-                  className={({ isActive }) =>
-                    isActive ? "text-black" : "default"
-                  }
+                  className={({ isActive }) => (isActive ? "text-black" : "")}
                 >
                   Logout
                 </NavLink>
@@ -107,9 +99,7 @@ const Header = () => {
                   to="/login"
                   aria-label="login"
                   title="Login"
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-700" : "default"
-                  }
+                  className={({ isActive }) => (isActive ? "font-bold" : "")}
                 >
                   Login
                 </NavLink>
@@ -117,10 +107,21 @@ const Header = () => {
             </li>
           </ul>
         </div>
-
-        <span className="text-gray-600 font-semibold sm:text-3xl ">
-          Food <span className="text-yellow-500"> Network</span>
-        </span>
+        <div className="flex gap-2 text-lg">
+          <div>
+            <span className=" font-bold my-1 ">F</span>
+            ood
+          </div>
+          <div className="md:block">
+            <span className=" font-bold my-1 ">N</span>etwork
+          </div>
+        </div>
+        {/*  <h2 className="text-3xl text-center normal-case my-4 leading-5 font-bold tracking-tight text-gray-900 ">
+          Food <span className="font-bold">Network</span>
+        </h2> */}
+        {/* <span className="text-gray-600 font-semibold  sm:text-3xl ">
+          Food <span className="font-bold"> Network</span>
+        </span> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -129,9 +130,7 @@ const Header = () => {
               to="/"
               aria-label="Home"
               title="Home"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700" : "default"
-              }
+              className={({ isActive }) => (isActive ? "font-bold" : "")}
             >
               Home
             </NavLink>
@@ -141,49 +140,30 @@ const Header = () => {
               to="/blogs"
               aria-label="blogs"
               title="Blogs"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700" : "default"
-              }
+              className={({ isActive }) => (isActive ? "font-bold" : "")}
             >
               Blogs
             </NavLink>
           </li>
-          {user && (
-            <li>
-              <NavLink
-                to="/profile"
-                aria-label="Update Profile"
-                title="Update Profile"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-700" : "default"
-                }
-              >
-                Update Profile
-              </NavLink>
-            </li>
-          )}
+
           <li>
             <NavLink
               to="/about-us"
               aria-label="about us"
               title="About us"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700" : "default"
-              }
+              className={({ isActive }) => (isActive ? "font-bold" : "")}
             >
               About Us
             </NavLink>
           </li>
-          <li>
+          <li className="">
             {user ? (
               <NavLink
                 onClick={handleLogout}
                 to="/"
                 aria-label="logout"
                 title="Logout"
-                className={({ isActive }) =>
-                  isActive ? "text-black" : "default"
-                }
+                className={({ isActive }) => (isActive ? "text-black" : "")}
               >
                 Logout
               </NavLink>
@@ -192,33 +172,28 @@ const Header = () => {
                 to="/login"
                 aria-label="login"
                 title="Login"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-700" : "default"
-                }
+                className={({ isActive }) => (isActive ? "font-bold" : "")}
               >
                 Login
               </NavLink>
             )}
           </li>
+          <li>
+            {user && (
+              <div
+                onClick={() => navigate("/profile")}
+                className="tooltip tooltip-left"
+                data-tip={user?.displayName}
+              >
+                <img
+                  className="ring ring-blue-300 my-auto md:ring-black rounded-[50%] block h-8 w-8"
+                  src={user?.photoURL}
+                  alt="not found"
+                />
+              </div>
+            )}
+          </li>
         </ul>
-      </div>
-
-      <div className="navbar-end flex justify-end">
-        {user && (
-          <div>
-            <div
-              onClick={() => navigate("/profile")}
-              className="tooltip tooltip-left"
-              data-tip={user?.displayName}
-            >
-              <img
-                className="ring ring-blue-300 md:ring-blue-500 rounded-full block w-8"
-                src={user?.photoURL}
-                alt="not found"
-              />
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

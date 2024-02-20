@@ -6,11 +6,11 @@ const options = {
   unit: "in",
   format: [11, 8.5],
 };
-function Blog() {
+function anotherBlog() {
   const ref = React.createRef();
 
   return (
-    <div className="font-serif pt-20">
+    <div className="pt-20">
       <div className="flex justify-center">
         <Pdf targetRef={ref} filename="blog.pdf" options={options}>
           {({ toPdf }) => (
@@ -95,4 +95,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default anotherBlog;

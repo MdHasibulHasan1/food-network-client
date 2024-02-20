@@ -62,7 +62,7 @@ const UpdateProfile = () => {
                       name="name"
                       id="name"
                       required
-                      className="w-full px-3 border rounded-md shadow-sm focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200"
+                      className="w-full px-3 border rounded-md shadow-sm focus:outline-none focus:border-yellow-300 focus:ring focus:ring-yellow-200"
                     />
                   </div>
                   <div className="mb-3  text-lg">
@@ -78,7 +78,7 @@ const UpdateProfile = () => {
                       name="email"
                       id="email"
                       required
-                      className="w-full px-3 border rounded-md shadow-sm focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200"
+                      className="w-full px-3 border rounded-md shadow-sm focus:outline-none focus:border-yellow-300 focus:ring focus:ring-yellow-200"
                     />
                   </div>
 
@@ -95,13 +95,13 @@ const UpdateProfile = () => {
                       id="photo-url"
                       name="photoUrl"
                       required
-                      className="w-full px-4 border rounded-md shadow-sm focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200"
+                      className="w-full px-4 border rounded-md shadow-sm focus:outline-none focus:border-yellow-300 focus:ring focus:ring-yellow-200"
                     />
                   </div>
                   <button
                     onClick={() => updateUserData()}
                     type="submit"
-                    className="bg-blue-500 block  w-full text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                    className="bg-yellow-500 block  w-full text-white py-2 px-4 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600"
                   >
                     Update Profile
                   </button>

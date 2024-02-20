@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-
 import toast from "react-hot-toast";
-import { addToDb } from "../../utilities/fakedb";
-import SingleRecipe from "../SingleRecipe/SingleRecipe";
+import { addToDb } from "../../../../../utilities/fakedb";
 import { Rating } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
+import SingleRecipe from "./SingleRecipe/SingleRecipe";
+
 const RecipeCard = ({ recipes, id }) => {
   console.log(recipes, id);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -25,7 +24,7 @@ const RecipeCard = ({ recipes, id }) => {
           >
             <div key={index} className="">
               <h1 className="font-bold text-2xl">{recipe?.name}</h1>
-              <SingleRecipe recipe={recipe}></SingleRecipe>
+              <SingleRecipe recipe={recipe} />
               <div>
                 <h1 className="font-medium p-2 outline-3 hover:bg-gray-100 text-left text-lg my-2 border">
                   Cooking method:

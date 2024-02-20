@@ -5,18 +5,19 @@ const Footer = () => {
     <div>
       <footer className="bg-gray-100 py-8 px-8">
         <div className="container mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="flex flex-col space-y-4">
-            <span className="text-gray-600 font-semibold text-3xl">
-              Food <span className="text-yellow-500"> Network</span>
-            </span>
-            <p className="text-sm">
-              We are a food website dedicated to bringing you the best recipes,
-              cooking tips, and food news from around the world.
-            </p>
-          </div>
           <div>
-            <h3 className="text-gray-600 font-semibold mb-4">Categories</h3>
-            <ul className="space-y-2">
+            <h2 className="text-gray-900 font-bold mb-2 ">Food Network</h2>
+            <div className="">
+              <p className="text-gray-600 hover:text-gray-800">
+                We are a food website dedicated to bringing you the best
+                recipes, cooking tips, and food news from around the world.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-gray-900 font-bold mb-2">Categories</h3>
+            <ul className="">
               <li>
                 <a href="#" className="text-gray-600 hover:text-gray-800">
                   Breakfast
@@ -40,8 +41,8 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-gray-600 font-semibold mb-4">About Us</h3>
-            <ul className="space-y-2">
+            <h3 className="text-gray-900 font-bold mb-2 ">About Us</h3>
+            <ul className="">
               <li>
                 <a href="#" className="text-gray-600 hover:text-gray-800">
                   Our Story
@@ -60,8 +61,8 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-gray-600 font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2">
+            <h3 className="text-gray-900 font-bold mb-2 ">Contact Us</h3>
+            <ul className="">
               <li>
                 <a href="#" className="text-gray-600 hover:text-gray-800">
                   Email: info@foodwebsite.com

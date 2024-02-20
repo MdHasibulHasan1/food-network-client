@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import RecipeCard from "../RecipeCard/RecipeCard";
+import RecipeCard from "./RecipeCard/RecipeCard";
 
 const RecipeDetail = () => {
   const { Id } = useParams();
@@ -36,26 +36,18 @@ const RecipeDetail = () => {
             <p className=" text-sm">{description}</p>
           </div>
         </div>
-        <div className="flex justify-around mt-4">
+        <div className="flex text-gray-700 justify-around mt-4">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-gray-700 font-semibold text-lg mb-2">
-              Years of Experience
-            </p>
-            <p className="text-gray-700 text-2xl font-bold">
-              {years_of_experience}
-            </p>
+            <p className=" font-semibold text-lg mb-2">Years of Experience</p>
+            <p className=" text-2xl font-bold">{years_of_experience}</p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <p className="text-gray-700 font-semibold text-lg mb-2">
-              Number of Recipes
-            </p>
-            <p className="text-gray-700 text-2xl font-bold">
-              {recipes?.length}
-            </p>
+            <p className=" font-semibold text-lg mb-2">Number of Recipes</p>
+            <p className=" text-2xl font-bold">{recipes?.length}</p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <p className="text-gray-700 font-semibold text-lg mb-2">Likes</p>
-            <p className="text-gray-700 text-2xl font-bold">{likes}</p>
+            <p className=" font-semibold text-lg mb-2">Likes</p>
+            <p className=" text-2xl font-bold">{likes}</p>
           </div>
         </div>
       </div>

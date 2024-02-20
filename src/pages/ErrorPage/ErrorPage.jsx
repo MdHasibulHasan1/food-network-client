@@ -30,7 +30,7 @@ const ErrorPage = () => {
           <button
             type="button"
             onClick={handleGoBack}
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors duration-300"
+            className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-md transition-colors duration-300"
           >
             Back to homepage
           </button>

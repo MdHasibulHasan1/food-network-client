@@ -142,7 +142,7 @@ const AboutUsPage = () => {
                 ></textarea>
                 <button
                   type="submit"
-                  className="bg-blue-600 text-white py-2 rounded-lg shadow-lg hover:bg-blue-800"
+                  className="bg-blue-500 text-white py-2 rounded-lg shadow-lg hover:bg-blue-600"
                 >
                   Submit
                 </button>

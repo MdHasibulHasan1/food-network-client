@@ -1,10 +1,11 @@
 import React from "react";
+import SectionTitle from "../../components/sectionTitle";
 
 const Food = () => {
   return (
     <div>
       <section className="bg-gray-100 py-12 ">
-        <div className=" mx-auto px-4 sm:px-6 items-center justify-center lg:px-8 flex flex-col md:flex-row">
+        <div className=" mx-auto px-4 sm:px-6 items-center justify-center lg:px-8 flex flex-col-reverse md:flex-row">
           <div className="md:w-6/12 w-full h-[65vh] p-4 rounded-lg">
             <img
               className="w-full h-full block object-cover"
@@ -14,10 +15,15 @@ const Food = () => {
           </div>
 
           <div className="md:w-1/2 px-4">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            {/*  <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Kung Pao Chicken
-            </h2>
-            <p className="text-gray-600 mb-4">
+            </h2> */}
+            <SectionTitle
+              title="Kung"
+              style="text-left"
+              highlightedText="Pao Chicken"
+            />
+            <p className="text-gray-600 my-4 ">
               Kung Pao Chicken is a popular Chinese dish that originated in the
               Sichuan province of China. It is a spicy stir-fry dish made with
               marinated chicken, peanuts, vegetables, and chili peppers. The

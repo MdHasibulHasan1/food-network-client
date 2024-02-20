@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
-import FeaturedRecipe from "../FeatureRecipe/FeatureRecipe";
+import { AuthContext } from "../../../providers/AuthProvider";
+import FeaturedRecipe from "./FeatureRecipe";
+import SectionTitle from "../../../components/sectionTitle";
 
 const FeaturedRecipes = () => {
   const [foodsData, setFoodsData] = useState([]);
@@ -20,14 +21,20 @@ const FeaturedRecipes = () => {
       ) : (
         <div className="bg-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:text-center -mb-10">
-              <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <div className="lg:text-center -mb-14">
+              <SectionTitle
+                title="Our Featured"
+                highlightedText="Recipes"
+                description="Discover our handpicked selection of the most delicious and
+                innovative recipes from around the world."
+              />
+              {/* <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 Our Featured <span className="text-yellow-500">Recipes</span>
-              </h2>
-              <p className="mt-2 text-lg leading-6 text-gray-500">
+              </h2> */}
+              {/* <p className="mt-2 text-lg leading-6 text-gray-500">
                 Discover our handpicked selection of the most delicious and
                 innovative recipes from around the world.
-              </p>
+              </p> */}
             </div>
             <div className="grid md:grid-cols-2 gap-8 lg:grid-cols-3">
               {foodsData.map((food) => (

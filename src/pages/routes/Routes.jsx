@@ -1,15 +1,14 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import AboutUsPage from "../AboutUsPage/AboutUsPage";
-import Blog from "../Blog/Blog";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
 import MainLayouts from "../layouts/MainLayouts";
-
 import Login from "../Login/Login";
-import RecipeDetail from "../RecipeDetail/RecipeDetail";
+import RecipeDetail from "../Home/ChefData/RecipeDetail/RecipeDetail";
 import Register from "../Register/Register";
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
+import BlogPage from "../BlogPage/BlogPage";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "blogs",
-        element: <Blog></Blog>,
+        element: <BlogPage />,
       },
       {
         path: "about-us",
